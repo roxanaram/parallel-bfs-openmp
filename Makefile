@@ -1,11 +1,10 @@
-CXX=g++
-CXXFLAGS=-fopenmp -O2 -std=c++17
-TARGET=bfs_parallel
+CC = g++
+CFLAGS = -fopenmp -O2
 
-all: $(TARGET)
+all: bfs
 
-$(TARGET): src/bfs_parallel.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@
+bfs: bfs.cpp
+	$(CC) $(CFLAGS) bfs.cpp -o bfs
 
 clean:
-	rm -f $(TARGET)
+	rm -f bfs
